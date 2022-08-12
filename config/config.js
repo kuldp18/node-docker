@@ -6,4 +6,5 @@ module.exports = {
   REDIS_URL: process.env.REDIS_URL || 'redis',
   REDIS_PORT: process.env.REDIS_PORT || 6379,
   SESSION_SECRET: process.env.SESSION_SECRET,
+  MONGO_ATLAS_URL: process.env.MONGO_ATLAS_URL || 'YOUR_MONGO_ATLAS_URL',
 };

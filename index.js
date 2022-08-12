@@ -3,13 +3,14 @@ const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const {
-  MONGO_USER,
-  MONGO_PASSWORD,
-  MONGO_IP,
-  MONGO_PORT,
+  // MONGO_USER,
+  // MONGO_PASSWORD,
+  // MONGO_IP,
+  // MONGO_PORT,
   REDIS_URL,
   REDIS_PORT,
   SESSION_SECRET,
+  MONGO_ATLAS_URL,
 } = require('./config/config');
 
 // redis stuff
@@ -26,7 +27,9 @@ const userRouter = require('./routes/userRoutes');
 
 const port = process.env.PORT || 3000;
 
-const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
+// const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
+
+const mongoURL = MONGO_ATLAS_URL;
 
 app.enable('trust proxy');
 
